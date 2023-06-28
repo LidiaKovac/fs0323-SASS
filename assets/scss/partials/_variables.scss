@@ -1,0 +1,28 @@
+@use "sass:map";
+$rosso: rgb(255, 87, 87, 0.744);
+$flex: 1 1 100px;
+$colori: red, green, blue;
+
+$theme: (
+  primary: rgb(12, 120, 200),
+  secondary: rgb(195, 229, 255),
+  size: 100px,
+  sizeBig: 30px,
+);
+
+//`${}`
+
+.margin-#{map.get($theme, size)} {
+  margin: map.get($theme, size);
+}
+
+$m-1: 50rem;
+
+.m-#{$m-1} {
+    margin:$m-1;
+}
+
+
+.margin-30px {
+    margin: 30px;
+}

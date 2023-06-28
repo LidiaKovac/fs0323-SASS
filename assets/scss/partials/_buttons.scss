@@ -1,0 +1,38 @@
+// function sum (a,b) {
+//    return a+b
+// }
+// sum(2,4)
+@use "sass:math";
+// @mixin btn($colore) {
+//   border: none;
+//   border-radius: math.ceil(25.5679px);
+//   padding: 5px;
+//   background-color: $colore;
+//   border: 2px solid darken($colore, 20%);
+//   //lighten, transparentize 
+//   color: invert($colore);
+// }
+
+.btn {
+    border: none;
+  border-radius: math.ceil(25.5679px);
+  padding: 5px;
+  background-color: red;
+  border: 2px solid darken(red, 20%);
+  //lighten, transparentize 
+  color: invert(red);
+}
+
+.btn-rosa {
+  @include btn($rosso);
+}
+
+.btn-verde {
+  @include btn(greenyellow);
+
+}
+
+.btn-blu {
+  @include btn(azure);
+
+}
