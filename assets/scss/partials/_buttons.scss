@@ -9,30 +9,36 @@
 //   padding: 5px;
 //   background-color: $colore;
 //   border: 2px solid darken($colore, 20%);
-//   //lighten, transparentize 
+//   //lighten, transparentize
 //   color: invert($colore);
 // }
 
 .btn {
-    border: none;
+  border: none;
   border-radius: math.ceil(25.5679px);
   padding: 5px;
-  background-color: red;
-  border: 2px solid darken(red, 20%);
-  //lighten, transparentize 
-  color: invert(red);
+  span {
+    background-color: green;
+  }
+  //   background-color: red;
+  //   border: 2px solid darken(red, 20%);
+  //lighten, transparentize
+  //   color: invert(red);
 }
 
 .btn-rosa {
-  @include btn($rosso);
+  @extend .btn;
+  background-color: pink;
+  border: 2px solid darken(pink, 20%);
+  color: black;
+
+  //   @include btn($rosso);
 }
 
 .btn-verde {
-  @include btn(greenyellow);
-
+  //   @include btn(greenyellow);
 }
 
 .btn-blu {
-  @include btn(azure);
-
+  //   @include btn(azure);
 }
