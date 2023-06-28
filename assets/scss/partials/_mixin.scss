@@ -1,0 +1,34 @@
+@mixin nav($dark: false) {
+  //se non passo parametro, il valore sara' false
+  nav {
+    height: 100px;
+    @include flex-config(row, space-between, center, unset);
+    @if ($dark) {
+      background-color: $bg-dark;
+    } @else {
+      background-color: pink;
+    }
+  }
+}
+
+@mixin main($dark: false) {
+  main {
+    height: 80%;
+    @if ($dark) {
+      background-color: darken($bg-dark, 30%);
+    } @else {
+      background-color: lighten(pink, 10%);
+    }
+  }
+}
+
+@mixin footer($dark: false) {
+  footer {
+    height: 15%;
+    @if ($dark) {
+      background-color: $bg-dark;
+    } @else {
+      background-color: plum;
+    }
+  }
+}

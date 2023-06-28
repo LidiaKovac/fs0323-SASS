@@ -1,9 +1,26 @@
 @import "partials/variables";
+@import "partials/flex";
+@import "partials/mixin";
 //funzioni, mixin etc. etc.
 
 @import "partials/buttons";
 @import "partials/header";
 //altro partial
+
+.wrap {
+  height: 100vh;
+  @include nav();
+  @include main();
+  @include footer();
+}
+
+.dark {
+  height: 100vh;
+
+  @include nav(true);
+  @include main(true);
+  @include footer(true);
+}
 
 h1 {
   color: $rosso;
@@ -27,7 +44,7 @@ div.grande {
         color: fuchsia;
       }
     }
-    
+
     // h2:hover {
     //     color: fuchsia
     // }
