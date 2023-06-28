@@ -14,10 +14,11 @@
 @mixin main($dark: false) {
   main {
     height: 80%;
+    animation: rainbow 10s infinite;
     @if ($dark) {
-      background-color: darken($bg-dark, 30%);
+      // background-color: darken($bg-dark, 30%);
     } @else {
-      background-color: lighten(pink, 10%);
+      // background-color: lighten(pink, 10%);
     }
   }
 }

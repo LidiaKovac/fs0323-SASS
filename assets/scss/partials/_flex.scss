@@ -1,15 +1,57 @@
+@use "sass:math";
 @mixin flex-config($dir, $lungo, $corto, $gap) {
-    display: flex;
-    flex-direction: $dir;
-    justify-content: $lungo;
-    align-items: $corto;
-    gap: $gap
+  display: flex;
+  flex-direction: $dir;
+  justify-content: $lungo;
+  align-items: $corto;
+  gap: $gap;
 }
 
 @mixin flex-center {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
+$i: 1;
+@while $i <= 12 {
+  .col-#{$i} {
+    width: math.floor(calc(100% / (12 / $i)));
+  }
+  $i: $i + 1;
+}
+
+$blue-rgb: rgb(93, 106, 255, 1);
+$green-rgb: rgb(71, 230, 177, 1);
+$yellow-rgb: rgb(220, 252, 91, 1);
+$orange-rgb: rgb(230, 165, 71, 1);
+$pink-rgb: rgb(254, 79, 130, 1);
+
+@keyframes rainbow {
+  $colors: (
+    0: $green-rgb,
+    25: $yellow-rgb,
+    50: $orange-rgb,
+    75: $pink-rgb,
+    100: $green-rgb,
+  );
+
+  @each $perc, $col in $colors {
+    #{$perc + "%"} {
+      color: $col;
+      stroke: darken($col, 20%);
+
+      transform: translateY(-50%) rotate((calc($perc / 100) * 360) + deg);
+    }
+  }
+}
+// @for $j from 1 to 12 {
+//   .col-#{$j} {
+//     width: math.floor(calc(100% / (12 / $j)));
+//   }
+// }
+
+@mixin col($num) {
+  width: 100% / $num;
+}
