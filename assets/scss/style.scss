@@ -1,6 +1,28 @@
-$rosso: rgba(255, 87, 87, 0.744);
+$rosso: rgb(255, 87, 87, 0.744);
+$flex: 1 1 100px;
+$colori: red, green, blue;
+
+$theme: (
+    primary: rgb(12, 120, 200),
+    secondary: rgb(195, 229, 255)
+);
+
 
 h1 {
     color: $rosso;
     background-color: aliceblue;
+}
+
+div.grande {
+    width: 50%;
+    aspect-ratio: 1/1;
+    background-color: green;
+}
+
+div.piccolo {
+    width: calc(100% - 50px);
+    //120px - 45.57px
+    //SE STESSA UNITA' ANCHE SENZA CALC
+    aspect-ratio: 1/1;
+    background-color: rebeccapurple;
 }
